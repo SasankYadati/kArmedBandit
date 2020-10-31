@@ -1,0 +1,2 @@
+from kArmedBandit.envs.TenArmedBanditFixedReward_env import TenArmedBanditFixedRewardEnv
+from kArmedBandit.envs.TenArmedBanditGaussianReward_env import TenArmedBanditGaussianRewardEnv 
