@@ -12,7 +12,7 @@ class TenArmedBanditFixedRewardEnv(gym.Env):
         self.num_bandits = 10
         self.reward_dist = []
         for _ in range(self.num_bandits):
-            # each reward distribution is a gaussian described using mean and standard deviation
+            # each action has a fixed reward
             self.reward_dist.append(random.uniform(0, 1))
         self.action_space = spaces.Discrete(self.num_bandits)
         self.observation_space = spaces.Discrete(1)
