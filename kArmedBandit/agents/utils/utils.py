@@ -1,0 +1,17 @@
+import numpy as np
+def argmax(values):
+    """
+    Takes in a list of values and returns the index of the item 
+    with the highest value. Breaks ties randomly.
+    returns: int - the index of the highest value in values
+    """
+    top_value = float("-inf")
+    ties = []
+    
+    for i in range(len(values)):
+        if values[i] > top_value:
+            top_value = values[i]
+            ties = []
+        if values[i] == top_value:
+            ties.append(i)
+    return np.random.choice(ties)
