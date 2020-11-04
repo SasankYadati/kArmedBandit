@@ -15,3 +15,9 @@ def argmax(values):
         if values[i] == top_value:
             ties.append(i)
     return np.random.choice(ties)
+
+if __name__ == '__main__':
+    test_array = [0, 0, 0, 2, 0, 3, 0, 0, 1, 0]
+    assert argmax(test_array) == 5, "Check your argmax implementation returns the index of the largest value"
+    test_array = [0, 0, 0, 2, 0, 3, 0, 3, 1, 0]
+    assert argmax(test_array) in [5, 7], "Check your argmax implementation returns the index of the largest value"
