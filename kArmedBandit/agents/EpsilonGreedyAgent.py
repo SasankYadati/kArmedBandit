@@ -3,7 +3,8 @@ from kArmedBandit.agents.utils.utils import argmax
 class EpsilonGreedyAgent:
     def __init__(self, num_actions=10, epsilon=0.1):
         self.last_action = None
-        # action values are referred to as q-values, initialized with
+        # action values are referred to as q-values, initialized with 0.
+        # defined for each action as the average of the rewards so far
         self.q_values = num_actions*[0]
         # keep track of action counts
         self.action_count = num_actions*[0]
