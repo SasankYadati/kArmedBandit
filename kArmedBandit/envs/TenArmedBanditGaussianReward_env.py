@@ -11,7 +11,7 @@ class TenArmedBanditGaussianRewardEnv(gym.Env):
         self._seed(seed)
         self.num_bandits = 10
         # each reward distribution is a gaussian described using mean and standard deviation
-        self.reward_dist = [[np.random.normal(0, 1), 1] for _ in range(self.num_bandits)]
+        self.reward_dist = [[random.uniform(0, 1), 1] for _ in range(self.num_bandits)]
         self.action_space = spaces.Discrete(self.num_bandits)
         self.observation_space = spaces.Discrete(1)
 
@@ -21,13 +21,10 @@ class TenArmedBanditGaussianRewardEnv(gym.Env):
 
     def step(self, action):
         assert self.action_space.contains(action)
-
-        reward = 0
         done = True
 
         # sample reward using the corresponding reward distribution
-        reward = np.random.normal(
-            self.reward_dist[action][0], self.reward_dist[action][1])
+        reward = np.random.normal(self.reward_dist[action][0], self.reward_dist[action][1])
 
         return 0, reward, done, {}
 
