@@ -21,3 +21,5 @@ if __name__ == '__main__':
     assert argmax(test_array) == 5, "Check your argmax implementation returns the index of the largest value"
     test_array = [0, 0, 0, 2, 0, 3, 0, 3, 1, 0]
     assert argmax(test_array) in [5, 7], "Check your argmax implementation returns the index of the largest value"
+    test_array = [np.inf, -np.inf, 0.5, 0.5, 0.5]
+    assert argmax(test_array) == 0, "Check your argmax implementation returns the index of the largest value"

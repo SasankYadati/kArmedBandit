@@ -11,7 +11,7 @@ class TenArmedBanditGaussianRewardEnv(gym.Env):
         self._seed(seed)
         self.num_bandits = 10
         # each reward distribution is a gaussian described using mean and standard deviation
-        self.reward_dist = [[random.uniform(0, 1), 1] for _ in range(self.num_bandits)]
+        self.reward_dist = [[random.uniform(0, 1), 0.5] for _ in range(self.num_bandits)]
         self.action_space = spaces.Discrete(self.num_bandits)
         self.observation_space = spaces.Discrete(1)
 
